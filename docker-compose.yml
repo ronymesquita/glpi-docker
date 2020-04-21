@@ -2,10 +2,13 @@ version: "3"
 services:
 
   glpi:
-    image: glpi:0.0.2
+    image: glpi:0.0.4
     ports:
       - 8080:80
-    depends_on: 
+    volumes:
+      - ./glpi/config:/var/www/html/config
+      - ./glpi/log:/var/www/html/files/_log
+    depends_on:
       - db
     networks:
       - glpi
@@ -14,9 +17,9 @@ services:
     image: mariadb:10
     env_file: .env
     volumes:
-      - $PWD/mariadb/data:/var/lib/mysql
+      - ./mariadb/data:/var/lib/mysql
     networks:
       - glpi
 
-networks: 
+networks:
   glpi:

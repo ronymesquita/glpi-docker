@@ -523,3 +523,7 @@ glpi/.credentials.txt
 
 # Hide MariaDB directory
 mariadb
+
+# Hide GLPI configuration and log
+glpi/config/config_db.php
+glpi/log

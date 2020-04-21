@@ -1,4 +1,4 @@
-FROM php:7.4.4-apache-buster
+FROM php:7.4.5-apache-buster
 COPY config/php.ini $PHP_INI_DIR/conf.d/
 
 RUN apt-get update && apt-get install -y \
